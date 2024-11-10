@@ -1,1 +1,1 @@
-echo
+Python input/output exercises repository
