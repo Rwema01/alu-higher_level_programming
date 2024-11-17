@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Fetches and displays the status of a URL.
+"""Fetches and displays the status of a URL.
 
 This script fetches the status of a given URL and prints the body of the response in the specified format.
 The script is designed to work for both https://intranet.hbtn.io/status and http://0.0.0.0:5050/status.
