@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""Documented by Lsblack"""
+"""Fetches and displays the status of a URL.
+
+This script fetches the status of a given URL and prints the body of the response in the specified format.
+The script is designed to work for both https://intranet.hbtn.io/status and http://0.0.0.0:5050/status.
+"""
 import urllib.request
 
-url = 'https://intranet.hbtn.io/status'
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36',
-}
+# URL to fetch
+url = 'https://intranet.hbtn.io/status'  # Change this to 'http://0.0.0.0:5050/status' to use the local server
 
-req = urllib.request.Request(url, headers=headers)
+# Send the request and get the response
+req = urllib.request.Request(url)
 with urllib.request.urlopen(req) as response:
     content = response.read()
+
+    # Print the response body
     print("Body response:")
     print("\t- type:", type(content))
     print("\t- content:", content)
