@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """
 This script fetches https://alu-intranet.hbtn.io/status and http://0.0.0.0:5050/status
 using urllib, and prints the body response with the required formatting.
