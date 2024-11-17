@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """
-Fetch status of alx.intranet site
- This script fetches https://alu-intranet.hbtn.io/status using urllib package.
- It displays the response body with proper formatting and decoding.
- The script can be easily updated to fetch data from another URL such as http://0.0.0.0:5050/status (for testing purposes).
-
+This script fetches https://alu-intranet.hbtn.io/status using urllib package.
+It displays the response body with proper formatting and decoding.
+The script can be easily updated to fetch data from another URL such as http://0.0.0.0:5050/status (for testing purposes).
 """
 import urllib.request
 
@@ -20,9 +18,9 @@ def fetch_status():
  data = response.read()
 
  print("Body response:")
- print("\t- type: ", type(data))
- print("\t- content: ", data)
- print("\t- utf8 content: ", data.decode('utf-8'))
+ print("- type: {}".format(type(data)))
+ print("- content: {}".format(data))
+ print("- utf8 content: {}".format(data.decode('utf-8')))
 
 if __name__ == "__main__":
  fetch_status()
