@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Fetch https://intranet.hbtn.io/status."""
+"""Fetch https://intranet.hbtn.io/status or http://0.0.0.0:5050/status."""
 import urllib.request
 import urllib.error
 
 if __name__ == "__main__":
+    # URL to fetch; change this to test the other URL
     url = "https://intranet.hbtn.io/status"
     
-    # Add a User-Agent and other headers
+    # Create a request with necessary headers
     request = urllib.request.Request(url, headers={
         'User-Agent': 'Mozilla/5.0',
         'Accept': 'text/html',
@@ -14,8 +15,10 @@ if __name__ == "__main__":
     })
     
     try:
+        # Open the URL and read the response
         with urllib.request.urlopen(request) as response:
             body = response.read()
+            # Print the response details
             print("Body response:")
             print("\t- type: {}".format(type(body)))
             print("\t- content: {}".format(body))
