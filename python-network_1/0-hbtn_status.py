@@ -1,7 +1,13 @@
 #!/usr/bin/python3
 """
-This script fetches https://alu-intranet.hbtn.io/status and http://0.0.0.0:5050/status
-using urllib, and prints the body response with the required formatting.
+This script fetches data from two URLs:
+    1. https://alu-intranet.hbtn.io/status
+    2. http://0.0.0.0:5050/status
+
+It prints the type, content, and UTF-8 decoded content of the response from each URL.
+
+For the first URL, the script fetches the status of the intranet server.
+For the second URL, it fetches a custom status message from a locally running server.
 """
 
 import urllib.request
