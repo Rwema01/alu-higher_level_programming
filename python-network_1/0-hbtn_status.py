@@ -1,13 +1,19 @@
 #!/usr/bin/python3
 """
-This script fetches https://alu-intranet.hbtn.io/status using urllib package.
-It displays the response body with proper formatting and decoding.
+This script fetches the status of a URL (https://alu-intranet.hbtn.io/status)
+using the urllib package. It retrieves the response from the URL, decodes the
+content, and displays it in a formatted manner, including the type, content, and
+utf-8 decoded content.
+
+The script demonstrates the use of urllib to open and read data from a URL and 
+properly handle the response within a 'with' statement to ensure proper resource 
+management.
 """
 
 import urllib.request
 
 def fetch_status():
-    """Fetch the status of the URL and print formatted body response"""
+    """Fetch the status of the URL and print formatted body response."""
     url = 'https://alu-intranet.hbtn.io/status'
     
     with urllib.request.urlopen(url) as response:
@@ -21,3 +27,4 @@ def fetch_status():
 
 if __name__ == "__main__":
     fetch_status()
+
