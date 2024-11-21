@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-"""Fetches http://0.0.0.0:5050/status using urllib"""
+import urllib.request
 
-from urllib import request
+url = "https://alu-intranet.hbtn.io/status"
 
-url = "http://0.0.0.0:5050/status"
-
-with request.urlopen(url) as response:
+with urllib.request.urlopen(url) as response:
     body = response.read()
-
-print("Body response:")
-print("\t- type: {}".format(type(body)))
-print("\t- content: {}".format(body))
-print("\t- utf8 content: {}".format(body.decode('utf-8')))
+    print("Body response:")
+    print(f"\t- type: {type(body)}")
+    print(f"\t- content: {body}")
+    print(f"\t- utf8 content: {body.decode('utf-8')}")
 
