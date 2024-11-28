@@ -11,7 +11,9 @@ from model_state import Base, State
 
 if __name__ == "__main__":
     # Connect to the MySQL database using the provided credentials
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3]))
+    eng = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3])
+    )
 
     # Create the tables if they don't already exist
     Base.metadata.create_all(eng)
@@ -21,7 +23,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query to find all states where the name contains the letter 'a' (case insensitive)
-    states = session.query(State).filter(State.name.ilike('%a%')).all()  # Using ilike for case-insensitive search
+    states = session.query(State).filter(State.name.ilike('%a%')).all()
 
     # Loop through the states and delete them
     for state in states:
